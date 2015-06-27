@@ -1,0 +1,9 @@
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/app/build
+/captures
+FloatingActionButtonDemo.iml
+/app/app.iml
