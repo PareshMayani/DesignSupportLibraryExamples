@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="navdrawer_image_height">140dp</dimen>
+    <dimen name="navdrawer_image_height">192dp</dimen>
     <dimen name="navdrawer_user_picture_size">40dp</dimen>
-    <dimen name="keyline_1">16dp</dimen>
+    <dimen name="keyline_1">25dp</dimen>
 </resources>
