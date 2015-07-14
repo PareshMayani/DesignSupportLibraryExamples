@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/navdrawer_image_height">
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navdrawer_image_height"
+    android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/navdrawer_image"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/navdrawer_image_height"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_material_design"
-            android:contentDescription="@string/cd_navdrawer_image"/>
+    <ImageView
+        android:id="@+id/navdrawer_image"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/navdrawer_image_height"
+        android:contentDescription="@string/cd_navdrawer_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_material_design" />
 
-        <ImageView
-            android:id="@+id/navdrawer_user_picture"
-            android:layout_width="@dimen/navdrawer_user_picture_size"
-            android:layout_height="@dimen/navdrawer_user_picture_size"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="@dimen/keyline_1"
-            android:layout_marginLeft="@dimen/keyline_1"
-            android:layout_marginStart="@dimen/keyline_1"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/cd_navdrawer_user_picture"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewName"
+        android:text="Paresh Mayani"
+        android:layout_marginTop="@dimen/margin_user_name"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin_user_layout"
+        android:layout_marginStart="@dimen/margin_user_layout"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/txtViewEmail"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewEmail"
+        android:text="pareshmayani@gmail.com"
+        android:layout_marginBottom="@dimen/margin_user_email"
+        android:layout_alignLeft="@+id/txtViewName"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>
