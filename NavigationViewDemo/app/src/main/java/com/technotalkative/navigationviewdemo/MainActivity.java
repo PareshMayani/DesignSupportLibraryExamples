@@ -1,6 +1,7 @@
 package com.technotalkative.navigationviewdemo;
 
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -45,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
 
+        setupActionBarDrawerToogle();
+        if (mNavigationView != null) {
+            setupDrawerContent(mNavigationView);
+        }
+    }
+
+    /**
+     * In case if you require to handle drawer open and close states
+     */
+    private void setupActionBarDrawerToogle() {
+
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 mDrawerLayout,         /* DrawerLayout object */
@@ -56,20 +69,18 @@ public class MainActivity extends AppCompatActivity {
              * Called when a drawer has settled in a completely closed state.
              */
             public void onDrawerClosed(View view) {
-
+                Snackbar.make(view, R.string.drawer_close, Snackbar.LENGTH_SHORT).show();
             }
 
             /**
              * Called when a drawer has settled in a completely open state.
              */
             public void onDrawerOpened(View drawerView) {
+                Snackbar.make(drawerView, R.string.drawer_open, Snackbar.LENGTH_SHORT).show();
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        if (mNavigationView != null) {
-            setupDrawerContent(mNavigationView);
-        }
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
