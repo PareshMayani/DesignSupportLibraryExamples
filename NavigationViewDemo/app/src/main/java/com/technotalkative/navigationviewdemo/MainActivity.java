@@ -1,5 +1,6 @@
 package com.technotalkative.navigationviewdemo;
 
+import android.support.design.internal.NavigationMenuPresenter;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -12,7 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
+import android.widget.BaseAdapter;
+import android.widget.HeaderViewListAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -85,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupDrawerContent(NavigationView navigationView) {
 
+        addItemsRunTime(navigationView);
+
+        //setting up selected item listener
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -94,6 +102,32 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+    }
+
+    private void addItemsRunTime(NavigationView navigationView) {
+
+        //adding items run time
+        final Menu menu = navigationView.getMenu();
+        for (int i = 1; i <= 3; i++) {
+            menu.add("Runtime item "+ i);
+        }
+
+        // adding a section and items into it
+        final SubMenu subMenu = menu.addSubMenu("SubMenu Title");
+        for (int i = 1; i <= 2; i++) {
+            subMenu.add("SubMenu Item " + i);
+        }
+
+        // refreshing navigation drawer adapter
+        for (int i = 0, count = mNavigationView.getChildCount(); i < count; i++) {
+            final View child = mNavigationView.getChildAt(i);
+            if (child != null && child instanceof ListView) {
+                final ListView menuView = (ListView) child;
+                final HeaderViewListAdapter adapter = (HeaderViewListAdapter) menuView.getAdapter();
+                final BaseAdapter wrapped = (BaseAdapter) adapter.getWrappedAdapter();
+                wrapped.notifyDataSetChanged();
+            }
+        }
     }
 
     @Override
