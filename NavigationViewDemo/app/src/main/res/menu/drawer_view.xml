@@ -14,7 +14,23 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_drawer_settings"
             android:title="@string/nav_settings" />
+
+        <item
+            android:id="@+id/navigation_subheader"
+            android:title="@string/nav_sub_header">
+            <menu>
+                <item
+                    android:id="@+id/navigation_sub_item_1"
+                    android:icon="@drawable/ic_drawer_about"
+                    android:title="@string/nav_sub_item_1" />
+                <item
+                    android:id="@+id/navigation_sub_item_2"
+                    android:icon="@drawable/ic_drawer_home"
+                    android:title="@string/nav_sub_item_2" />
+            </menu>
+        </item>
     </group>
+
 
 
 </menu>

@@ -13,4 +13,9 @@
 
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
+
+    <string name="nav_sub_header">Sub header</string>
+    <string name="nav_sub_item_1">Sub item 1</string>
+    <string name="nav_sub_item_2">Sub item 2</string>
+
 </resources>
