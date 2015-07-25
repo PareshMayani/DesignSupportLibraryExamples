@@ -64,4 +64,9 @@ public class MainActivity extends AppCompatActivity {
             layoutLastName.setErrorEnabled(true);
         }
     }
+
+    public void btnValidateDialogInputClick(View v) {
+        FeedbackFragment fragment = new FeedbackFragment();
+        fragment.show(getSupportFragmentManager(),"FeedbackFragment");
+    }
 }
